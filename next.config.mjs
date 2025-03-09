@@ -17,6 +17,13 @@ const nextConfig = {
   //     },
   //   ];
   // },
+  images: {
+    domains: [
+      "w3s.link",
+      "bafybeigmar5cy3aglukkz3nuhgqtw2opg4a3x4f5agcebfgcajstiufogy.ipfs.w3s.link"
+    ],
+  }
+
 };
 
 export default nextConfig;

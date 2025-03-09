@@ -2,11 +2,12 @@ import "../styles/globals.css";
 import Layout from "../layout/default";
 import { Provider } from "react-redux";
 import Store from "../store/store";
+import merge from 'lodash.merge';
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   getDefaultConfig,
   RainbowKitProvider,
-  darkTheme,
+  darkTheme
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
 import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
@@ -38,13 +39,19 @@ const config = getDefaultConfig({
   ssr: true,
 });
 
+const myTheme = merge(darkTheme(), {
+  colors: {
+    accentColor: '#EA355C',
+  },
+});
+
 function MyApp({ Component, pageProps }) {
   const queryClient = new QueryClient();
   return (
     <Provider store={Store}>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider theme={darkTheme()} coolMode={true}>
+          <RainbowKitProvider theme={myTheme} coolMode={true}>
             <Layout>
               <Component {...pageProps} />
             </Layout>
