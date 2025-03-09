@@ -10,13 +10,18 @@ import { useSelector } from "react-redux";
 import DiscordImage from "../public/assets/discord.png";
 import TelegramImage from "../public/assets/telegram.png";
 import TwitterImage from "../public/assets/twiter.png";
+import { decrypt } from "../store/encryptMiddleware.js"
 
 export default function Navbar() {
-  const {
+  let {
     twitter,
     telegram,
     discord,
   } = useSelector((state) => state.data);
+
+  twitter = decrypt(twitter);
+  telegram = decrypt(telegram);
+  discord = decrypt(discord);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

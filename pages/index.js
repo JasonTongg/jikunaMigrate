@@ -10,12 +10,15 @@ import { ethers } from "ethers";
 import { useAccount } from "wagmi";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { decrypt } from "../store/encryptMiddleware.js"
 
 export default function Index() {
-  const {
+  let {
     abi,
     contractAddress
   } = useSelector((state) => state.data);
+  abi = decrypt(abi);
+  contractAddress = decrypt(contractAddress);
   const { address, isConnected } = useAccount();
 
   const [hash, setHash] = useState("");

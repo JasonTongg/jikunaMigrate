@@ -13,25 +13,25 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&family=Ubuntu:wght@300&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="https://Domain/assets/Logo" />
-        <title>Title Content</title>
+        <link rel="icon" href="./assets/logo.png" />
+        <title>Jikuna Migrate</title>
 
-        <meta name="title" content="Title Content" />
-        <meta name="description" content="Description Content" />
+        <meta name="title" content="Jikuna Migrate" />
+        <meta name="description" content="Jikuna is an anime themed NFT that built on the Monad network. Features a distinctive visual identity with a unique modern touch. Jikuna aims to build a close knit and amazing community. Jikuna combines cultural elements and the digital world to create an NFT collection that appeals to art and blockchain technology enthusiasts." />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://Domain/assets/FileName" />
-        <meta property="og:title" content="Title Content" />
-        <meta property="og:description" content="Description Content" />
-        <meta property="og:image" content="https://Domain/assets/FileName" />
+        {/* <meta property="og:url" content="https://Domain/assets/FileName" /> */}
+        <meta property="og:title" content="Jikuna Migrate" />
+        <meta property="og:description" content="Jikuna is an anime themed NFT that built on the Monad network. Features a distinctive visual identity with a unique modern touch. Jikuna aims to build a close knit and amazing community. Jikuna combines cultural elements and the digital world to create an NFT collection that appeals to art and blockchain technology enthusiasts." />
+        {/* <meta property="og:image" content="https://Domain/assets/FileName" /> */}
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://Domain/assets/FileName" />
-        <meta property="twitter:title" content="Title Content" />
-        <meta property="twitter:description" content="Description Content" />
+        {/* <meta property="twitter:url" content="https://Domain/assets/FileName" /> */}
+        <meta property="twitter:title" content="Jikuna Migrate" />
+        <meta property="twitter:description" content="Jikuna is an anime themed NFT that built on the Monad network. Features a distinctive visual identity with a unique modern touch. Jikuna aims to build a close knit and amazing community. Jikuna combines cultural elements and the digital world to create an NFT collection that appeals to art and blockchain technology enthusiasts." />
         <meta
           property="twitter:image"
-          content="https://Domain/assets/FileName"
+        // content="https://Domain/assets/FileName"
         />
       </Head>
       <body>
