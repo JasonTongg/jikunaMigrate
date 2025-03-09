@@ -52,18 +52,22 @@ export default function Index() {
       setStatus("Failed");
       return;
     }
+    console.log(data)
 
     const provider = new ethers.BrowserProvider(window.ethereum);
+    const providerRpc = new ethers.JsonRpcProvider("https://testnet-rpc.monad.xyz");
     const signer = await provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, abi, signer);
+    const contract = new ethers.Contract(contractAddress, abi, providerRpc);
 
     try {
-      await contract.ownerOf(data.tokenId);
+      const result = await contract.ownerOf(data?.tokenId);
+      console.log(result);
       toast.error("This NFT already migrated...");
       setStatus("Failed");
     } catch (error) {
       if (error.message.includes("ERC721NonexistentToken")) {
-        await contract.migrateNFT(data?.to, data?.tokenId, data?.signature);
+        const contract2 = new ethers.Contract(contractAddress, abi, signer);
+        await contract2.migrateNFT(data?.to, data?.tokenId, data?.signature);
         await tx3.wait();
         toast.success("NFT Migrate successfully");
         setStatus("Success");
